@@ -17,10 +17,10 @@ class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
 
   @override
-  State<DetailPage> createState() => _DetailPageState();
+  State<DetailPage> createState() => DetailPageState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class DetailPageState extends State<DetailPage> {
   List<String> imageList = [
     "https://i.pinimg.com/236x/51/65/58/51655846a635918698a0b7fad48f65f5.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYZa5maK_VoscoiBP7oF_R4U3QSRkMDyANbo20QZwQvS25M3eYc16JlmL1Qb5tJVQXTZM&usqp=CAU",
@@ -40,7 +40,7 @@ class _DetailPageState extends State<DetailPage> {
     "https://i.pinimg.com/236x/87/33/34/8733341ed14a169f99469f7a017aa56a.jpg",
   ];
 
-  Color BGColor = Colors.white;
+  Color BgColor = Colors.white;
   String font = "Australia";
   bool isImage = true;
   double opacity = 1;
@@ -152,7 +152,7 @@ class _DetailPageState extends State<DetailPage> {
                   key: key,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: isImage ? null : BGColor,
+                      color: isImage ? null : BgColor,
                       image: isImage && selectedImage != null
                           ? DecorationImage(
                               image: NetworkImage(selectedImage!),
@@ -307,7 +307,7 @@ class _DetailPageState extends State<DetailPage> {
                                     padding: const EdgeInsets.all(2),
                                     child: GestureDetector(
                                       onTap: () {
-                                        BGColor = Colors.primaries[index];
+                                        BgColor = Colors.primaries[index];
                                         setState(() {});
                                       },
                                       child: CircleAvatar(
@@ -329,7 +329,7 @@ class _DetailPageState extends State<DetailPage> {
                               Slider(
                                 min: 0,
                                 max: 1,
-                                activeColor: BGColor.withOpacity(opacity),
+                                activeColor: BgColor.withOpacity(opacity),
                                 value: opacity,
                                 onChanged: (val) {
                                   opacity = val;
