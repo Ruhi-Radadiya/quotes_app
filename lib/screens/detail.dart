@@ -41,7 +41,6 @@ class DetailPageState extends State<DetailPage> {
   ];
 
   Color BgColor = Colors.white;
-  String font = "Australia";
   bool isImage = true;
   double opacity = 1;
 
@@ -172,7 +171,6 @@ class DetailPageState extends State<DetailPage> {
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w500,
                               color: fontColour,
-                              fontFamily: font,
                             ),
                             textAlign: TextAlign.center,
                           ),
